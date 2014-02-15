@@ -13,7 +13,7 @@ These limitations can be solved by using slave RTT cameras. In the following, I'
 
 Creating a Slave Camera
 ---------------------
-The implementation of a slave RTT camera is the same as for a nested camera. The `osg::Camera` is subclassed and the camera configured.
+The implementation of a slave RTT camera is the same as for a nested camera. The `osg::Camera` is subclassed and the camera configured. A texture is created and assigned as a color buffer to the camera.
 
 {% highlight c++ %}
 class RenderColorToTexture : public osg::Camera
