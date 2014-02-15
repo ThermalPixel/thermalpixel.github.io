@@ -45,13 +45,13 @@ Creating a Graphics Context
 --------------------
 In contrast to nested cameras, we need to set the graphics context as well as the viewport for each slave camera. The graphics context can be either queried from the viewer or manually created. A manual graphics context should be used when the default camera from the viewer is not required. For example, this is useful for the G-Buffer render pass of a deferred renderer. In this example, the graphics context will be manually created.
 
-The creation of the graphics context is straightforward. The `osg::GraphicsContext::Traits` define the properties for the graphics context.
+The creation of the graphics context is straightforward. The `osg::GraphicsContext::Traits` define the properties of the context and is required to construct a `osg::GraphicsContext` instance.
 {% highlight c++ %}
 osg::ref_ptr<osg::GraphicsContext::Traits> traits = new osg::GraphicsContext::Traits;
 traits->x = 0;
 traits->y = 0;
-traits->width = width;
-traits->height = height;
+traits->width = width; 
+traits->height = height; 
 traits->windowDecoration = true; // window border etc.
 traits->doubleBuffer = true;
 traits->sharedContext = 0;
